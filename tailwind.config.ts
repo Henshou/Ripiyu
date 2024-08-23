@@ -17,6 +17,8 @@ const config: Config = {
     colors: {
       white: "white",
       black: "black",
+      red: "red",
+      green: "green",
       "vibrant": "#0077b6",
       "darkblue": "#03045e",
       slate: {
