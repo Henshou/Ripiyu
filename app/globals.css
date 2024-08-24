@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.formSize{
+  width: 500px;
+  height: 500px;
+}
+
+.custom-border {
+  border-color: #0051B8;
+}
+
+.background {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('/backgroundloginPage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: grayscale(100%);
+  background-color: rgba(11, 46, 128, 0.5); 
+}
+
