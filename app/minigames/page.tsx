@@ -36,6 +36,72 @@ const questions: Question[] = [
         options: ['Semarang', 'Jakarta', 'Cirebon', 'Jatinangor'],
         correctAnswerIndex: 0,
     },
+    {
+        question: 'Siapa nama rektor pertama ITB?',
+        image: '',
+        options: ['Prof. Ir. Hendrik Christiaan Paulus de Vos', 'Prof. Dr. Jacob Clay', 'Prof.  Ir. Jan Klopper', 'Prof. Ir. Paulus Pieter Bijlaard'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Nama ITB saat pendudukan Jepang',
+        image: '',
+        options: ['Bandung Tekunoroji Daigaku', 'Bandung Kogyo Daigaku', 'Bandung Gijutsu Daigaku', 'Bandung Utsukushii Daigaku'],
+        correctAnswerIndex: 1,
+    },
+    {
+        question: 'Tahun berapa Ir. Soekarno lulus dari ITB?',
+        image: '',
+        options: ['1924', '1925', '1926', '1927'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Jurusan yang diambil Ir. Soekarno?',
+        image: '',
+        options: ['Teknik Sipil', 'Teknik Mesin', 'Teknik Industri', 'Teknik Geologi'],
+        correctAnswerIndex: 0,
+    },
+    {
+        question: 'Kapan pemerintah Indonesia meresmikan berdirinya ITB?',
+        image: '',
+        options: ['21 Juni 1946', '3 Juli 1920', '26 Desember 2000', '2 Maret 1959'],
+        correctAnswerIndex: 3,
+    },
+    {
+        question: 'Apa nama bunga pada gambar yang mekar di bulan Juli-September seolah-olah menyambut mahasiswa baru?',
+        image: '/images/BungaQuiz.jpg',
+        options: ['Kembang Sepatu', 'Bougenville', 'Kembang Kolecer', 'Rain Lily'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Kapan mahasiswa ITB memenangi Rural Innovation Award?',
+        image: '',
+        options: ['1 Juni 2008', '2 Juni 2008', '1 Juli 2008', '2 Juli 2008'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Total program studi sarjana ITB ada',
+        image: '',
+        options: ['50', '51', '52', '53'],
+        correctAnswerIndex: 0,
+    },
+    {
+        question: 'Mana yang merupakan koordinat letak ITB Jatinangor?',
+        image: '',
+        options: ['6°53′27.25″LS,107°36′37.36″BT', '6°55′41.124″LS,107°46′13.62″BT', '6°53′29.27″LS,107°38′37.39″BT', '6°55′43.125″LS,107°48′13.64″BT'],
+        correctAnswerIndex: 1,
+    },
+    {
+        question: 'Luas ITB Ganesha',
+        image: '',
+        options: ['47 hektar', '30 hektar', '28 hektar', '19 hektar'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Nama Menteri Pendidikan dan Kebudayaan Indonesia yang pernah menjadi rektor ITB?',
+        image: '',
+        options: ['Prof. Dr. Muhadjir Effendy, M.A.P.', 'Prof. Dr. Pratikno, M..Soc.Sc', 'Dr. Ir. Kusmayanto Kadiman', 'Prof. Ir. Wiranto Arismundar, MSME'],
+        correctAnswerIndex: 3,
+    },
 ];
 
 export default function MinigamesPage() {
@@ -43,6 +109,7 @@ export default function MinigamesPage() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
     const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
+    const [scores, setScores] = useState(0);
 
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -51,6 +118,7 @@ export default function MinigamesPage() {
         setCurrentQuestionIndex(0);
         setSelectedAnswerIndex(null);
         setShowCorrectAnswer(false);
+        setScores(0);
     }
 
     useEffect(() => {
@@ -67,6 +135,7 @@ export default function MinigamesPage() {
 
     const handleAnswerClick = (index: number) => {
         setSelectedAnswerIndex(index);
+
         setShowCorrectAnswer(true);
     };
 
@@ -98,7 +167,7 @@ export default function MinigamesPage() {
                             {/* Quiz Count */}
                             <div className="flex justify-center">
                                 <h2 className="mt-3 p-3 w-48 text-3xl text-center font-bold rounded-lg bg-cloudblue text-black">
-                                    {currentQuestionIndex + 1}/10
+                                    {currentQuestionIndex + 1}/15
                                 </h2>
                             </div>
 
