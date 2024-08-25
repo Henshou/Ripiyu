@@ -19,7 +19,7 @@ const Navbar = () => {
                                     <a href="/" className="p-2"><NotificationsNoneOutlinedIcon className="text-white" fontSize="large"></NotificationsNoneOutlinedIcon></a>
                                     <div className="flex flex-row items-center">
                                         <AccountCircleIcon className="text-white" fontSize="large"></AccountCircleIcon>
-                                    <a href="/" className="text-white p-2 text-2xl">User</a>
+                                    <a href="/" className="text-white p-2 text-xl">User</a>
                                     </div>
                                 </div>
                             </div>
