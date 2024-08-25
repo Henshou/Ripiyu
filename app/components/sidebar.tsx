@@ -14,7 +14,7 @@ const SideBar = () => {
                         <HomeIcon className="mr-0.5" ></HomeIcon>
                         <h2 className="text-xl">Home</h2>
                     </Link>
-                    <Link href='/' className="flex flex-row items-center rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mb-3 bg-white">
+                    <Link href='/minigames' className="flex flex-row items-center rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mb-3 bg-white">
                         <VideogameAssetOutlinedIcon className="mr-0.5" ></VideogameAssetOutlinedIcon>
                         <h2 className="text-xl">Mini Games</h2>
                     </Link>
