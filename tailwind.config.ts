@@ -19,6 +19,8 @@ const config: Config = {
       black: "black",
       "vibrant": "#0077b6",
       "darkblue": "#03045e",
+      "bluey": "#142B4D",
+      "blueish": "#0078B7",
       slate: {
         200: "#e2e8f0",
         300: "#cbd5e1",
@@ -27,6 +29,9 @@ const config: Config = {
       },
       "cloudblue": "#caf0f8" 
     },
+    fontFamily: {
+      "ptserif": ["PT Serif"]
+    }
   },
   plugins: [],
 };

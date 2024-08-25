@@ -1,43 +1,109 @@
+'use client';
 import Image from "next/image";
 import Navbar from "./components/navbar";
+import Link from "next/link";
+import SideBar from "./components/sidebar";
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
+    const [currentTime, setCurrentTime] = useState('');
+    const [currentDate, setCurrentDate] = useState('');
+    const [currentDay, setCurrentDay] = useState('');
+
+    useEffect(() => {
+        const updateTimeAndDate = () => {
+            const now = new Date();
+            const optionsDate = { year: 'numeric', month: 'long', day: 'numeric', locale: 'id-ID' };
+            setCurrentTime(now.toLocaleTimeString());
+            const optionsDay = { weekday: 'long',  locale: 'id-ID'};
+
+            setCurrentDate(now.toLocaleDateString('id-ID', optionsDate));
+            setCurrentDay(now.toLocaleDateString('id-ID', optionsDay));
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            setCurrentTime(`${hours}:${minutes}`);
+        };
+
+        updateTimeAndDate();
+        const intervalId = setInterval(updateTimeAndDate, 60000);
+
+        return () => clearInterval(intervalId);
+    }, []);
     return (
         <>
             <Navbar></Navbar>
 
-            <div className="flex flex-row">
-                <div className="flex flex-col w-1/4 bg-white items-center border-r-2 border-slate-200 h-lvh">
-                    <div className="rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mt-8 mb-3">
-                        <h2>Home</h2>
-                    </div>
-                    <div className="rounded-lg text-black hover:bg-vibrant hover:text-white  w-5/6 p-2 mb-3">
-                        <h2>Mini Games</h2>
-                    </div>
-                    <div className="rounded-lg text-black hover:bg-vibrant hover:text-white  w-5/6 p-2 mb-3">
-                        <h2>Leaderboard</h2>
-                    </div>
-                    <div className="rounded-lg text-black hover:bg-vibrant hover:text-white  w-5/6 p-2 mb-3">
-                        <h2>About Us</h2>
-                    </div>
-                    <div className="rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mb-3">
-                        <h2>Settings</h2>
-                    </div>
-                    <div className="rounded-lg text-white bg-vibrant p-2 mt-3 w-5/6 text-center">
-                        <h2>Logout</h2>
-                    </div>
-                </div>
-
-                <div className="flex flex-col w-screen h-lvh">
-                    <div className="bg-cloudblue ml-3 mt-3 mr-3 mb-5 h-1/3 rounded-lg">
-                        <h2 className="text-3xl p-3">Selamat datang</h2>
-                    </div>
-                    <div className="flex flex-row gap-20">
-                        <div className="bg-slate-300 text-center rounded-lg ml-3 w-[534px]">
-                            <h2>Matematika</h2>
+            <div className="flex flex-row h-[calc(100vh-64px)]">
+                <SideBar></SideBar>
+                <div className="flex flex-col w-screen">
+                    <div className="relative p-4 shadow-lg rounded-lg  overflow-hidden m-7 h-1/4">
+                        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/discuss.png)', opacity: 0.5 }}></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-blueish/70 to-blueish/21"></div>
+                        <div className="relative z-10">
+                            <h1 className="text-7xl text-white">{currentTime}</h1>
+                            <p className="text-lg text-white">{currentDay}, {currentDate}</p>
                         </div>
-                        <div className="bg-slate-300 text-center rounded-lg ml-3 w-[534px]">
-                            <h2>Matematika</h2>
+                    </div>
+                    <div className="m-5">
+                        <h2 className="text-xl font-semibold text-gray-800">Mata Kuliah TPB</h2>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                            {/* Course Card 1 */}
+                            <Link href="/">
+                                <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+                                    <div className="flex justify-center">
+                                        <Image src="/images/matematika.jpeg" alt="Matematika" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
+                                    </div>
+                                    <h3 className="font-bold mt-2">Matematika</h3>
+                                    <p>2,9/4 dari 50 responden</p>
+                                    <div className="flex justify-center mt-2">
+                                        <span className="text-yellow-500">★ ★ ★ ☆</span>
+                                    </div>
+                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                </div>
+                            </Link>
+                            {/* Course Card 2 */}
+                            <Link href="/">
+                                <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+                                    <div className="flex justify-center">
+                                        <Image src="/images/fisika.jpeg" alt="Fisika" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
+                                    </div>
+                                    <h3 className="font-bold mt-2">Fisika</h3>
+                                    <p>2.1/4 dari 50 responden</p>
+                                    <div className="flex justify-center mt-2">
+                                        <span className="text-yellow-500">★ ★ ☆ ☆</span>
+                                    </div>
+                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                </div>
+                            </Link>
+                            {/* Course Card 3 */}
+                            <Link href="/">
+                                <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+                                    <div className="flex justify-center">
+                                        <Image src="/images/kimia.jpeg" alt="Kimia" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
+                                    </div>
+                                    <h3 className="font-bold mt-2">Kimia</h3>
+                                    <p>2,12/4 dari 50 responden</p>
+                                    <div className="flex justify-center mt-2">
+                                        <span className="text-yellow-500">★ ★ ☆ ☆</span>
+                                    </div>
+                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                </div>
+                            </Link>
+                            {/* Course Card 4 */}
+                            <Link href="/">
+                                <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+                                    <div className="flex justify-center">
+                                        <Image src="/images/komputasi.jpeg" alt="Matematika" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
+                                    </div>
+                                    <h3 className="font-bold mt-2">Pengenalan Komputasi</h3>
+                                    <p>2,88/4 dari 50 responden</p>
+                                    <div className="flex justify-center mt-2">
+                                        <span className="text-yellow-500">★ ★ ★ ☆</span>
+                                    </div>
+                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
