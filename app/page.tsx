@@ -4,6 +4,8 @@ import Navbar from "./components/navbar";
 import Link from "next/link";
 import SideBar from "./components/sidebar";
 import React, { useEffect, useState } from 'react';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 
 const Home = () => {
     const [currentTime, setCurrentTime] = useState('');
@@ -15,7 +17,7 @@ const Home = () => {
             const now = new Date();
             const optionsDate = { year: 'numeric', month: 'long', day: 'numeric', locale: 'id-ID' };
             setCurrentTime(now.toLocaleTimeString());
-            const optionsDay = { weekday: 'long',  locale: 'id-ID'};
+            const optionsDay = { weekday: 'long', locale: 'id-ID' };
 
             setCurrentDate(now.toLocaleDateString('id-ID', optionsDate));
             setCurrentDay(now.toLocaleDateString('id-ID', optionsDay));
@@ -40,13 +42,13 @@ const Home = () => {
                     <div className="relative p-4 shadow-lg rounded-lg  overflow-hidden m-7 h-1/4">
                         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/discuss.png)', opacity: 0.5 }}></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-blueish/70 to-blueish/21"></div>
-                        <div className="relative z-10">
+                        <div className="relative z-10 cursor-default">
                             <h1 className="text-7xl text-white">{currentTime}</h1>
                             <p className="text-lg text-white">{currentDay}, {currentDate}</p>
                         </div>
                     </div>
                     <div className="m-5">
-                        <h2 className="text-xl font-semibold text-gray-800">Mata Kuliah TPB</h2>
+                        <h2 className="text-xl font-semibold text-gray-800 cursor-default">Mata Kuliah TPB</h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                             {/* Course Card 1 */}
                             <Link href="/">
@@ -57,9 +59,9 @@ const Home = () => {
                                     <h3 className="font-bold mt-2">Matematika</h3>
                                     <p>2,9/4 dari 50 responden</p>
                                     <div className="flex justify-center mt-2">
-                                        <span className="text-yellow-500">★ ★ ★ ☆</span>
+                                    <Rating className="text-vibrant" defaultValue={2.9} precision={0.1} max={4} readOnly />
                                     </div>
-                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                    <p className="text-vibrant mt-2">Lihat Detil</p>
                                 </div>
                             </Link>
                             {/* Course Card 2 */}
@@ -71,9 +73,9 @@ const Home = () => {
                                     <h3 className="font-bold mt-2">Fisika</h3>
                                     <p>2.1/4 dari 50 responden</p>
                                     <div className="flex justify-center mt-2">
-                                        <span className="text-yellow-500">★ ★ ☆ ☆</span>
+                                        <Rating className="text-vibrant" defaultValue={2.14} precision={0.1} max={4} readOnly />
                                     </div>
-                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                    <p className="text-vibrant mt-2">Lihat Detil</p>
                                 </div>
                             </Link>
                             {/* Course Card 3 */}
@@ -85,9 +87,9 @@ const Home = () => {
                                     <h3 className="font-bold mt-2">Kimia</h3>
                                     <p>2,12/4 dari 50 responden</p>
                                     <div className="flex justify-center mt-2">
-                                        <span className="text-yellow-500">★ ★ ☆ ☆</span>
+                                    <Rating className="text-vibrant" defaultValue={2.12} precision={0.1} max={4} readOnly />
                                     </div>
-                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                    <p className="text-vibrant mt-2">Lihat Detil</p>
                                 </div>
                             </Link>
                             {/* Course Card 4 */}
@@ -99,9 +101,9 @@ const Home = () => {
                                     <h3 className="font-bold mt-2">Pengenalan Komputasi</h3>
                                     <p>2,88/4 dari 50 responden</p>
                                     <div className="flex justify-center mt-2">
-                                        <span className="text-yellow-500">★ ★ ★ ☆</span>
+                                    <Rating className="text-vibrant" defaultValue={2.88} precision={0.1} max={4} readOnly />
                                     </div>
-                                    <p className="text-blue-500 mt-2">Lihat Detil</p>
+                                    <p className="text-vibrant mt-2">Lihat Detil</p>
                                 </div>
                             </Link>
                         </div>

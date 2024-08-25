@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
 import Image from "next/image";
+import SideBar from "../components/sidebar";
 
 interface Question {
     question: string;
@@ -176,24 +177,11 @@ export default function MinigamesPage() {
             {/* Navbar */}
             <Navbar />
 
-            <div className="flex flex-row">
-                {/* Sidebar */}
-                <div className="flex flex-col w-1/4 flex-shrink-0 bg-white items-center border-r-2 border-slate-200 h-lvh">
-                    {["Home", "Mini Games", "Leaderboard", "About Us", "Settings"].map((item, index) => (
-                        <div
-                            key={index}
-                            className="rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mt-3"
-                        >
-                            <h2>{item}</h2>
-                        </div>
-                    ))}
-                    <div className="rounded-lg text-white bg-vibrant p-2 mt-3 w-5/6 text-center">
-                        <h2>Logout</h2>
-                    </div>
-                </div>
+            <div className="flex flex-row h-[calc(100vh-64px)]">
+                <SideBar></SideBar>
 
                 {/* Main */}
-                <div className="flex-grow flex flex-col h-lvh">
+                <div className="flex flex-col w-screen">
                     {quizStarted ? (
                         <>
                             {/* Quiz Count */}
