@@ -141,6 +141,7 @@ export default function MinigamesPage() {
         setQuizStarted(false);
     }
 
+    {/* Timer Handling */}
     useEffect(() => {
         if (selectedAnswerIndex !== null && showCorrectAnswer) {
             const timer = setTimeout(() => {
@@ -158,6 +159,7 @@ export default function MinigamesPage() {
         }
     }, [showCorrectAnswer]);
 
+    {/* When Player clicks */}
     const handleAnswerClick = (index: number) => {
         if (!showCorrectAnswer) {
             setSelectedAnswerIndex(index);
@@ -242,6 +244,7 @@ export default function MinigamesPage() {
                         </>
                     ) : (
                         <>
+                            {/* Quiz Scores */}
                             {
                                 scores >= 0 ?
                                 (
