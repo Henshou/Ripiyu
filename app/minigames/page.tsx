@@ -7,6 +7,7 @@ import Image from "next/image";
 interface Question {
     question: string;
     image: string;
+    imagesize: number,
     options: string[];
     correctAnswerIndex: number;
 }
@@ -15,90 +16,105 @@ const questions: Question[] = [
     {
         question: 'Siapa nama kucing imut ITB ini?',
         image: '/images/CatQuiz.jpg',
+        imagesize: 150,
         options: ['Aneesa', 'Kitty', 'Ava Alison', 'Madam Eva'],
         correctAnswerIndex: 3,
     },
     {
         question: 'Kapan ITB didirikan?',
         image: '',
+        imagesize: 0,
         options: ['1920', '1930', '1910', '1940'],
         correctAnswerIndex: 0,
     },
     {
         question: 'Apa nama dari kampus ITB pada saat penjajahan Belanda?',
         image: '',
+        imagesize: 0,
         options: ['de Techniche Voortgezet te Bandung', 'de Techniche Hoogeschool te Bandung', 'de Techniche Koelenschool te Bandung', 'de Techniche Voortgezet te Indies'],
         correctAnswerIndex: 1,
     },
     {
         question: 'Berikut ini merupakan Multikampus ITB, kecuali ...',
         image: '',
+        imagesize: 0,
         options: ['Semarang', 'Jakarta', 'Cirebon', 'Jatinangor'],
         correctAnswerIndex: 0,
     },
     {
         question: 'Siapa nama rektor pertama ITB?',
         image: '',
+        imagesize: 0,
         options: ['Prof. Ir. Hendrik Christiaan Paulus de Vos', 'Prof. Dr. Jacob Clay', 'Prof.  Ir. Jan Klopper', 'Prof. Ir. Paulus Pieter Bijlaard'],
         correctAnswerIndex: 2,
     },
     {
         question: 'Nama ITB saat pendudukan Jepang',
         image: '',
+        imagesize: 0,
         options: ['Bandung Tekunoroji Daigaku', 'Bandung Kogyo Daigaku', 'Bandung Gijutsu Daigaku', 'Bandung Utsukushii Daigaku'],
         correctAnswerIndex: 1,
     },
     {
         question: 'Tahun berapa Ir. Soekarno lulus dari ITB?',
         image: '',
+        imagesize: 0,
         options: ['1924', '1925', '1926', '1927'],
         correctAnswerIndex: 2,
     },
     {
         question: 'Jurusan yang diambil Ir. Soekarno?',
         image: '',
+        imagesize: 0,
         options: ['Teknik Sipil', 'Teknik Mesin', 'Teknik Industri', 'Teknik Geologi'],
         correctAnswerIndex: 0,
     },
     {
         question: 'Kapan pemerintah Indonesia meresmikan berdirinya ITB?',
         image: '',
+        imagesize: 0,
         options: ['21 Juni 1946', '3 Juli 1920', '26 Desember 2000', '2 Maret 1959'],
         correctAnswerIndex: 3,
     },
     {
         question: 'Apa nama bunga pada gambar yang mekar di bulan Juli-September seolah-olah menyambut mahasiswa baru?',
         image: '/images/BungaQuiz.jpg',
+        imagesize: 400,
         options: ['Kembang Sepatu', 'Bougenville', 'Kembang Kolecer', 'Rain Lily'],
         correctAnswerIndex: 2,
     },
     {
         question: 'Kapan mahasiswa ITB memenangi Rural Innovation Award?',
         image: '',
+        imagesize: 0,
         options: ['1 Juni 2008', '2 Juni 2008', '1 Juli 2008', '2 Juli 2008'],
         correctAnswerIndex: 2,
     },
     {
         question: 'Total program studi sarjana ITB ada',
         image: '',
+        imagesize: 0,
         options: ['50', '51', '52', '53'],
         correctAnswerIndex: 0,
     },
     {
         question: 'Mana yang merupakan koordinat letak ITB Jatinangor?',
         image: '',
-        options: ['6°53′27.25″LS,107°36′37.36″BT', '6°55′41.124″LS,107°46′13.62″BT', '6°53′29.27″LS,107°38′37.39″BT', '6°55′43.125″LS,107°48′13.64″BT'],
+        imagesize: 0,
+        options: ['6°53′27.25″LS 107°36′37.36″BT', '6°55′41.124″LS 107°46′13.62″BT', '6°53′29.27″LS 107°38′37.39″BT', '6°55′43.125″LS 107°48′13.64″BT'],
         correctAnswerIndex: 1,
     },
     {
         question: 'Luas ITB Ganesha',
         image: '',
+        imagesize: 0,
         options: ['47 hektar', '30 hektar', '28 hektar', '19 hektar'],
         correctAnswerIndex: 2,
     },
     {
         question: 'Nama Menteri Pendidikan dan Kebudayaan Indonesia yang pernah menjadi rektor ITB?',
         image: '',
+        imagesize: 0,
         options: ['Prof. Dr. Muhadjir Effendy, M.A.P.', 'Prof. Dr. Pratikno, M..Soc.Sc', 'Dr. Ir. Kusmayanto Kadiman', 'Prof. Ir. Wiranto Arismundar, MSME'],
         correctAnswerIndex: 3,
     },
@@ -109,7 +125,7 @@ export default function MinigamesPage() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
     const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
-    const [scores, setScores] = useState(0);
+    const [scores, setScores] = useState(-1);
 
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -121,22 +137,36 @@ export default function MinigamesPage() {
         setScores(0);
     }
 
+    const endQuiz = () => {
+        setQuizStarted(false);
+    }
+
     useEffect(() => {
         if (selectedAnswerIndex !== null && showCorrectAnswer) {
             const timer = setTimeout(() => {
-                setShowCorrectAnswer(false);
-                setSelectedAnswerIndex(null);
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
+                if (currentQuestionIndex === 14) {
+                    endQuiz();
+                }
+                else {
+                    setShowCorrectAnswer(false);
+                    setSelectedAnswerIndex(null);
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                }
             }, 2000);
 
             return () => clearTimeout(timer);
         }
-    }, [showCorrectAnswer, selectedAnswerIndex]);
+    }, [showCorrectAnswer]);
 
     const handleAnswerClick = (index: number) => {
-        setSelectedAnswerIndex(index);
+        if (!showCorrectAnswer) {
+            setSelectedAnswerIndex(index);
+            setShowCorrectAnswer(true);
 
-        setShowCorrectAnswer(true);
+            if (index === currentQuestion.correctAnswerIndex) {
+                setScores(scores + 1);
+            }
+        }
     };
 
     return (
@@ -177,7 +207,7 @@ export default function MinigamesPage() {
                                     currentQuestion.image !== ''?
                                     (
                                         <div className="flex flex-col justify-center m-5 p-3 pl-10 pr-10 rounded-lg bg-white">
-                                            <Image src={currentQuestion.image} alt="cat" width={150} height={150}/>
+                                            <Image src={currentQuestion.image} alt="cat" width={currentQuestion.imagesize} height={currentQuestion.imagesize}/>
                                         </div>
                                     )
                                     : <></>
@@ -212,6 +242,16 @@ export default function MinigamesPage() {
                         </>
                     ) : (
                         <>
+                            {
+                                scores >= 0 ?
+                                (
+                                    <div className="flex flex-col m-3 h-20 rounded-lg justify-center bg-cloudblue">
+                                        <h2 className="text-3xl text-center font-bold">You Scored {scores} out of 15!!!</h2>
+                                    </div>
+                                )
+                                : <></>
+                            }
+
                             {/* Leaderboards */}
                             <div className="ml-3 mt-3 mr-3 mb-5 h-3/6 rounded-lg bg-cloudblue">
                                 <h2 className="text-3xl p-3 text-center font-bold">Leaderboards</h2>
