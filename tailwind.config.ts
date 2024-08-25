@@ -30,8 +30,7 @@ const config: Config = {
       "cloudblue": "#caf0f8" 
     },
     fontFamily: {
-      "ptserif": ["PT Serif"],
-      "poppin": ["Poppins"]
+      "ptserif": ["PT Serif"]
     }
   },
   plugins: [],
