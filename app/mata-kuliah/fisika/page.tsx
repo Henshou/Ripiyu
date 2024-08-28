@@ -17,7 +17,7 @@ const MataKuliah = () => {
         <main>
             <Navbar></Navbar>
 
-            <div className="flex flex-row">
+            <div className="flex flex-row h-screen">
                 <SideBar></SideBar>
                 <div className="flex flex-col px-8 container mx-auto">
                     <div className="mt-6 mb-3">
@@ -38,7 +38,7 @@ const MataKuliah = () => {
                     <div className="mt-6">
                         <h1 className="text-2xl">Materi & Silabus</h1>
                     </div>
-                    <div className="border-2 rounded-2xl border-black p-2">
+                    <div className="border-2 rounded-2xl border-black p-2 h-72">
                         <p></p>
                     </div>
                 </div>
