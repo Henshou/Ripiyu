@@ -51,7 +51,7 @@ const Home = () => {
                         <h2 className="text-xl font-semibold text-gray-800 cursor-default">Mata Kuliah TPB</h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                             {/* Course Card 1 */}
-                            <Link href="/">
+                            <Link href="/mata-kuliah/kalkulus">
                                 <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
                                     <div className="flex justify-center">
                                         <Image src="/images/matematika.jpeg" alt="Matematika" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
@@ -65,7 +65,7 @@ const Home = () => {
                                 </div>
                             </Link>
                             {/* Course Card 2 */}
-                            <Link href="/">
+                            <Link href="/mata-kuliah/fisika">
                                 <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
                                     <div className="flex justify-center">
                                         <Image src="/images/fisika.jpeg" alt="Fisika" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
@@ -79,7 +79,7 @@ const Home = () => {
                                 </div>
                             </Link>
                             {/* Course Card 3 */}
-                            <Link href="/">
+                            <Link href="/mata-kuliah/kimia">
                                 <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
                                     <div className="flex justify-center">
                                         <Image src="/images/kimia.jpeg" alt="Kimia" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
@@ -93,7 +93,7 @@ const Home = () => {
                                 </div>
                             </Link>
                             {/* Course Card 4 */}
-                            <Link href="/">
+                            <Link href="/mata-kuliah/pengkom">
                                 <div className="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
                                     <div className="flex justify-center">
                                         <Image src="/images/komputasi.jpeg" alt="Matematika" width={150} height={150} className="w-32 h-32 object-cover rounded-lg" />
