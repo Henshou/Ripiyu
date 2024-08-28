@@ -23,7 +23,7 @@ const MataKuliah = () => {
                     <div className="mt-6 mb-3">
                         <h1 className="text-2xl">Home &gt; Pengenalan Komputasi</h1>
                     </div>
-                    <div className="rounded-2xl bg-cloudblue p-4">
+                    <div className="rounded-2xl bg-cloudblue p-4 indent-6 text-justify">
                         <p>Pengantar Pemrograman atau Pengkom memperoleh rating 2,88 dari 4, yang menempatkannya hampir setara 
                             dengan Kalkulus dalam hal kepuasan mahasiswa. Mahasiswa cenderung mencari sumber belajar tambahan 
                             secara online, dengan 56% responden sangat sering mencari ulasan atau ringkasan tentang mata kuliah 

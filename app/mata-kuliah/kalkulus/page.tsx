@@ -23,7 +23,7 @@ const MataKuliah = () => {
                     <div className="mt-6 mb-3">
                         <h1 className="text-2xl">Home &gt; Kalkulus</h1>
                     </div>
-                    <div className="rounded-2xl bg-cloudblue p-4">
+                    <div className="rounded-2xl bg-cloudblue p-4 indent-6 text-justify">
                         <p>Mata kuliah Kalkulus mendapatkan rating 2,9 dari 4, yang menunjukkan bahwa mahasiswa secara umum 
                             merasa puas dengan materi yang diajarkan, meskipun ada ruang untuk perbaikan. Berdasarkan hasil 
                             survei, 54% responden merasa puas dengan materi yang diberikan, dan mayoritas mahasiswa (88%) 

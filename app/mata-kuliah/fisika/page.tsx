@@ -23,7 +23,7 @@ const MataKuliah = () => {
                     <div className="mt-6 mb-3">
                         <h1 className="text-2xl">Home &gt; Fisika</h1>
                     </div>
-                    <div className="rounded-2xl bg-cloudblue p-4">
+                    <div className="rounded-2xl bg-cloudblue p-4 indent-6 text-justify">
                         <p>Fisika mendapatkan rating yang relatif rendah, yaitu 2,1 dari 4, mengindikasikan bahwa banyak 
                             mahasiswa mengalami kesulitan dengan mata kuliah ini. Meski demikian, 54% responden merasa puas 
                             dengan materi yang diberikan. Sebagian besar mahasiswa mencari bantuan dari video tutorial (88%) 

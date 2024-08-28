@@ -23,7 +23,7 @@ const MataKuliah = () => {
                     <div className="mt-6 mb-3">
                         <h1 className="text-2xl">Home &gt; Kimia</h1>
                     </div>
-                    <div className="rounded-2xl bg-cloudblue p-4">
+                    <div className="rounded-2xl bg-cloudblue p-4 indent-6 text-justify">
                         <p>Kimia mendapatkan rating 2,12 dari 4, sedikit lebih tinggi dari Fisika, namun tetap berada di kisaran 
                             yang menunjukkan adanya tantangan bagi mahasiswa. Sebagian besar mahasiswa menggunakan video tutorial 
                             (88%) dan slide kuliah (76%) sebagai sumber utama untuk belajar, sementara gaya belajar visual dan 
