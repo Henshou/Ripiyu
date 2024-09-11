@@ -9,7 +9,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 const SideBar = () => {
     return (
         <>
-            <div className="flex flex-col w-1/5 items-center  bg-bluey">
+            <div className="flex flex-col w-1/5 items-center bg-bluey">
                     <Link href='/' className="flex flex-row items-center rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mt-8 mb-3 bg-white">
                         <HomeIcon className="mr-0.5" ></HomeIcon>
                         <h2 className="text-xl">Home</h2>
@@ -22,11 +22,11 @@ const SideBar = () => {
                         <InfoOutlinedIcon className="mr-0.5" ></InfoOutlinedIcon>
                         <h2 className="text-xl">About Us</h2>
                     </Link>
-                    <Link href='/' className="flex flex-row items-center rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mb-3 bg-white">
+                    <Link href='/settings' className="flex flex-row items-center rounded-lg text-black hover:bg-vibrant hover:text-white w-5/6 p-2 mb-3 bg-white">
                         <SettingsOutlinedIcon className="mr-0.5" ></SettingsOutlinedIcon>
                         <h2 className="text-xl">Settings</h2>
                     </Link>
-                    <Link href='/' className=" flex flex-row justify-center mt-auto mb-12 rounded-lg text-white bg-vibrant p-2 mt-3 w-5/6 text-center">
+                    <Link href='/login' className=" flex flex-row justify-center mt-auto mb-12 rounded-lg text-white bg-vibrant p-2 mt-3 w-5/6 text-center hover:bg-black">
                         <LogoutIcon className="mr-0.5"></LogoutIcon>
                         <h2 className="text-xl">Logout</h2>
                     </Link>
