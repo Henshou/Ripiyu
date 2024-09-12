@@ -158,7 +158,7 @@ export default function MinigamesPage() {
 
             return () => clearTimeout(timer);
         }
-    }, [showCorrectAnswer]);
+    }, [showCorrectAnswer, currentQuestionIndex, selectedAnswerIndex]);
 
     {/* When Player clicks */}
     const handleAnswerClick = (index: number) => {
