@@ -28,6 +28,10 @@ const Home = () => {
                 weekday: 'long', // This is correct
             };
 
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            setCurrentTime(`${hours}:${minutes}`);
+
             setCurrentTime(now.toLocaleTimeString('id-ID'));
             setCurrentDate(now.toLocaleDateString('id-ID', optionsDate));
             setCurrentDay(now.toLocaleDateString('id-ID', optionsDay));
