@@ -14,12 +14,14 @@ const Navbar = () => {
                                     <a href="/" className="p-2 text-center text-4xl font-bold text-white font-ptserif">Ripiyu</a>
                                 </div>
                             </div>
-                            <div className="md-block">
-                                <div className="ml-4 flex items-center space-x-4">
-                                    <a href="/" className="p-2"><NotificationsNoneOutlinedIcon className="text-white" fontSize="large"></NotificationsNoneOutlinedIcon></a>
-                                    <div className="flex flex-row items-center">
-                                        <AccountCircleIcon className="text-white" fontSize="large"></AccountCircleIcon>
-                                    <a href="/" className="text-white p-2 text-xl">User</a>
+                            <div className="flex items-center">
+                                <div className="flex space-x-4">
+                                    <a href="/" className="p-2 md:hidden">
+                                        <NotificationsNoneOutlinedIcon className="text-white" fontSize="large" />
+                                    </a>
+                                    <div className="flex items-center">
+                                        <AccountCircleIcon className="text-white" fontSize="large" />
+                                        <a href="/" className="text-white p-2 text-xl">User</a>
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +30,7 @@ const Navbar = () => {
                 </nav>
             </div>
         </>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
