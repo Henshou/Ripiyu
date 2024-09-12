@@ -45,8 +45,8 @@ const About = () => {
                             <p className="mt-2 text-lg text-gray-700 w-2/3 font-poppins mr-36">
                                 Tujuannya adalah para mahasiswa TPB ITB dapat mengetahui{" "}
                                 <span className="text-vibrant font-semibold">seluk beluk</span> dalam mata kuliah beserta{" "}
-                                <span className="text-vibrant font-semibold">do's</span> and{" "}
-                                <span className="text-vibrant font-semibold">don'ts</span> yang dapat diterapkan.
+                                <span className="text-vibrant font-semibold">do&apos;s</span> and{" "}
+                                <span className="text-vibrant font-semibold">don&apos;ts</span> yang dapat diterapkan.
                             </p>
                         </div>
                     </div>
