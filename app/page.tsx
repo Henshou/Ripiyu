@@ -15,18 +15,23 @@ const Home = () => {
     useEffect(() => {
         const updateTimeAndDate = () => {
             const now = new Date();
-            const optionsDate = { year: 'numeric', month: 'long', day: 'numeric', locale: 'id-ID' };
-            setCurrentTime(now.toLocaleTimeString());
-            const optionsDay = { weekday: 'long', locale: 'id-ID' };
 
+            // Correct options for date formatting
+            const optionsDate: Intl.DateTimeFormatOptions = {
+                year: 'numeric',
+                month: 'long',   
+                day: 'numeric',  
+            };
+
+            // Correct options for day formatting
+            const optionsDay: Intl.DateTimeFormatOptions = {
+                weekday: 'long', // This is correct
+            };
+
+            setCurrentTime(now.toLocaleTimeString('id-ID'));
             setCurrentDate(now.toLocaleDateString('id-ID', optionsDate));
             setCurrentDay(now.toLocaleDateString('id-ID', optionsDay));
-
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            setCurrentTime(`${hours}:${minutes}`);
-        };
-
+        }
         updateTimeAndDate();
         const intervalId = setInterval(updateTimeAndDate, 60000);
 
