@@ -243,12 +243,6 @@ export default function MinigamesPage() {
                                 : <></>
                             }
 
-                            {/* Leaderboards */}
-                            <div className="ml-3 mt-3 mr-3 mb-5 h-3/6 rounded-lg bg-cloudblue">
-                                <h2 className="text-3xl p-3 text-center font-bold">Leaderboards</h2>
-                                <h2 className="text-center font-bold">bla bla bla</h2>
-                            </div>
-
                             {/* Quiz Start */}
                             <div className="m-3 h-1/6 border-2 rounded-lg bg-white">
                                 <h2 className="text-2xl p-3 text-center font-bold">
